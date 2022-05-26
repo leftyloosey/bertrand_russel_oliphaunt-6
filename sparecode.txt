@@ -1,0 +1,26 @@
+  async function fetchExam(id) {
+    try {
+        const response = await fetch("http://api.openweathermap.org/geo/1.0/direct?q="+fInput.value+"&limit=1&appid="+apiKey, {
+            method: 'GET',
+            credentials: 'same-origin'
+        });
+        const exam = await response.json();
+        return exam;
+    } catch (error) {
+        console.error(error);
+    }
+}
+async function renderExam(id) {
+  const exam = await fetchExam(id);
+  console.log(exam);
+}
+  
+
+---------------------------
+
+      // if (cityIndex < 12) {
+    //     cityArray[cityIndex].innerHTML = "<button id="+fInput.value+" type=\"button\" class=\"btn btn-info\">"+fInput.value+"</button>"
+    //     fInput.value
+    //     cityIndex++
+    //     }
+    //     else if (cityIndex >= 12) {cityIndex = 0}
