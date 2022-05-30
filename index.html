@@ -11,7 +11,11 @@
 
     <body>
         <div class="container-fluid" style="background-color: white">
-          <div class="w-100 text-center mt-3 mb-3 bg-secondary bg-gradient text-white"><h3>Weather Dashboard</h3></div>    
+          <div class="w-100 text-center mt-3 mb-3 bg-secondary bg-gradient text-white">
+            <h3>Weather Dashboard</h3>
+            <p id="displayNow"></p>
+          </div>    
+           
             <div class="container-fluid">
               <div class="row">
                 <div class="col">
@@ -49,56 +53,56 @@
                     <div class="col-9"  style="background-color: white">
                       <div class="card">
                         <div class="card-body">
-                          <h5 id="bCity" class="card-title pt-2">City Name</h5>
+                          <h5 id="bCity" class="card-title pt-2"></h5>
                           <p id="bTemp" class="card-text">Temp</p>
                           <p id="bWind" class="card-text">Wind</p>
                           <p id="bHumid" class="card-text">Humidity</p>
-                          <p id="bUV" class="card-text">UV Index</p>
+                          <p id="bUV" class="card-text">UV Index<span id ="uvbg"></span></p>
                         </div>
                       </div>
 
                   
-                    <div class="container pt-5" style="background-color: white"><h4>Weather Forecast</h4></div>
+                    <div class="container pt-5" style="background-color: white"><h4>5-Day Forecast</h4></div>
                       <div class="col-12 w-100 p-1" style="background-color: white">
                         <div class="row pt-3" style="background-color: white">
                           <div class="col" style="background-color: white">
                             <li id="date1" class="list-group-item border-0 bg-secondary text-white">Date</li>
-                            <li id="icon1" class="list-group-item border-0 bg-secondary text-white">Icon</li>
+                            <li id="icon1" class="list-group-item border-0 bg-secondary text-white"></li>
                             <li id="temp1" class="list-group-item border-0 bg-secondary text-white">Temp</li>
                             <li id="wind1" class="list-group-item border-0 bg-secondary text-white">Wind</li>
                             <li id="humid1" class="list-group-item border-0 bg-secondary text-white">Humidity</li>
                           </div>
 
                           <div class="col"> 
-                            <li class="list-group-item border-0 bg-secondary text-white">Date</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Icon</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Temp</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Wind</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Humidity</li>
+                            <li id="date2" class="list-group-item border-0 bg-secondary text-white">Date</li>
+                            <li id="icon2" class="list-group-item border-0 bg-secondary text-white"></li>
+                            <li id="temp2" class="list-group-item border-0 bg-secondary text-white">Temp</li>
+                            <li id="wind2" class="list-group-item border-0 bg-secondary text-white">Wind</li>
+                            <li id="humid2" class="list-group-item border-0 bg-secondary text-white">Humidity</li>
                           </div>
 
                           <div class="col"> 
-                            <li class="list-group-item border-0 bg-secondary text-white">Date</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Icon</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Temp</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Wind</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Humidity</li>
+                            <li id="date3" class="list-group-item border-0 bg-secondary text-white">Date</li>
+                            <li id="icon3" class="list-group-item border-0 bg-secondary text-white"></li>
+                            <li id="temp3" class="list-group-item border-0 bg-secondary text-white">Temp</li>
+                            <li id="wind3" class="list-group-item border-0 bg-secondary text-white">Wind</li>
+                            <li id="humid3" class="list-group-item border-0 bg-secondary text-white">Humidity</li>
                           </div>
 
                           <div class="col"> 
-                            <li class="list-group-item border-0 bg-secondary text-white">Date</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Icon</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Temp</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Wind</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Humidity</li>
+                            <li id="date4" class="list-group-item border-0 bg-secondary text-white">Date</li>
+                            <li id="icon4" class="list-group-item border-0 bg-secondary text-white"></li>
+                            <li id="temp4" class="list-group-item border-0 bg-secondary text-white">Temp</li>
+                            <li id="wind4" class="list-group-item border-0 bg-secondary text-white">Wind</li>
+                            <li id="humid4" class="list-group-item border-0 bg-secondary text-white">Humidity</li>
                           </div>
                         
                           <div class="col">
-                            <li class="list-group-item border-0 bg-secondary text-white">Date</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Icon</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Temp</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Wind</li>
-                            <li class="list-group-item border-0 bg-secondary text-white">Humidity</li>
+                            <li id="date5" class="list-group-item border-0 bg-secondary text-white">Date</li>
+                            <li id="icon5" class="list-group-item border-0 bg-secondary text-white"></li>
+                            <li id="temp5" class="list-group-item border-0 bg-secondary text-white">Temp</li>
+                            <li id="wind5" class="list-group-item border-0 bg-secondary text-white">Wind</li>
+                            <li id="humid5" class="list-group-item border-0 bg-secondary text-white">Humidity</li>
                           </div>
                         </div>
                       </div>
@@ -110,6 +114,7 @@
           </div>
         </div>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script src="script.js"></script>
     </body>
 </html>

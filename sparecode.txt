@@ -24,3 +24,21 @@ async function renderExam(id) {
     //     cityIndex++
     //     }
     //     else if (cityIndex >= 12) {cityIndex = 0}
+
+    __________________-
+
+     // .then(function (response) {
+    //     if (!response.ok) {
+    //       throw response.json();
+    //     }
+    //     return response.json()
+    //     })
+    // .then(function(data) {
+    //    console.log("first data", data)
+  
+    // })
+    // .then(function(data) {
+    //   aResults = data
+    //   console.log("aresults", aResults)
+    //   convertFetch()
+    // })
