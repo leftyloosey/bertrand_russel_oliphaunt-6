@@ -1,3 +1,4 @@
+// globals
 var apiKey = "8f14f498b80df53efe91f44dcb494851"
 var lon
 var lat
@@ -12,6 +13,7 @@ var uvbg = document.querySelector("#uvbg")
 
 var cityIndex = 0
 
+// searched city history list
 var city1 = document.querySelector("#city1")
 var city2 = document.querySelector("#city2")
 var city3 = document.querySelector("#city3")
@@ -41,6 +43,7 @@ var cityArray = [
   city12
 ]
 
+// forecast cards
 var bCity = document.querySelector("#bCity")
 var bTemp = document.querySelector("#bTemp")
 var bWind = document.querySelector("#bWind")
@@ -80,6 +83,7 @@ var humid5 = document.querySelector("#humid5")
 var fInput = document.querySelector("#fInput")
 var selectButton = document.querySelector("#selectButton")
 
+// this function populates the searched city history list
 function selectClick() {
     if (cityIndex < 12) {
     cityArray[cityIndex].textContent = fInput.value
@@ -90,6 +94,7 @@ function selectClick() {
     fetchClick()
 }
 
+// this fetches the coordinates of a searched city
 function fetchClick() {
     fetch("https://blooming-lowlands-18463.herokuapp.com/http://api.openweathermap.org/geo/1.0/direct?q="+fInput.value+"&limit=1&appid="+apiKey)
     .then(res => res.json())
@@ -97,6 +102,8 @@ function fetchClick() {
     .then(() => convertFetch())
   }
 
+  // this converts the coordinates from the last function into a city name, and
+  // calls the functions that display the weather information onscreen
 function convertFetch() {
   lat = aResults[0].lat
   lon = aResults[0].lon
@@ -116,6 +123,7 @@ function convertFetch() {
     })
 }
 
+// current weather display
 function displayData() {
       bCity.innerHTML = aResults[0].name + " right now is " + "<img src=http://openweathermap.org/img/wn/"+bResults.current.weather[0].icon+"@2x.png>"
       bTemp.textContent = "Temp: " + bResults.current.temp
@@ -134,6 +142,7 @@ function displayData() {
       console.log("hmm")
 }
 
+// displays forecast cards
 function displayPanelData() {
   date1.textContent = moment().add(1, 'days').format("M"+"/"+"D")
   icon1.innerHTML = "<img src=http://openweathermap.org/img/wn/"+bResults.daily[0].weather[0].icon+"@2x.png>"
@@ -166,13 +175,14 @@ function displayPanelData() {
   humid5.textContent = "Humidity: " + bResults.daily[4].humidity
 }
 
+// this is the clickability of the searched city history
 function difCity(a) {
   fInput.value = a.path[0].innerText
   displayPanelData()
   fetchClick()
 }
 
-
+// event listeners and current date
 displayNow.textContent = currentDate
 
 selectButton.addEventListener("click", selectClick)
