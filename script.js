@@ -121,8 +121,16 @@ function displayData() {
       bTemp.textContent = "Temp: " + bResults.current.temp
       bWind.textContent = "Wind: " + bResults.current.wind_speed
       bHumid.textContent = "Humidity: " + bResults.current.humidity
-      bUV.textContent = "UV Index: " + bResults.current.uvi
-      
+      uvbg.textContent = bResults.current.uvi 
+      if (bResults.current.uvi <= 2) {
+      uvbg.style = "border-style: solid; background-color: lightgreen; color: blue;"
+      }
+      else if (bResults.current.uvi >= 3 && bResults.current.uvi <= 5) {
+        uvbg.style = "border-style: solid; background-color: yellow; color: black;"
+      }
+      else if (bResults.current.uvi >= 6) {
+        uvbg.style = "border-style: solid; background-color: orangered; color: white;"
+      }
       console.log("hmm")
 }
 
