@@ -1,3 +1,4 @@
-li {
+#cityList {
     border-radius: 0px;
+    cursor: pointer;
 }
