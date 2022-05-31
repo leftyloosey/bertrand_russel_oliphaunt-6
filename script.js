@@ -91,7 +91,7 @@ function selectClick() {
 }
 
 function fetchClick() {
-    fetch("http://api.openweathermap.org/geo/1.0/direct?q="+fInput.value+"&limit=1&appid="+apiKey)
+    fetch("https://blooming-lowlands-18463.herokuapp.com/http://api.openweathermap.org/geo/1.0/direct?q="+fInput.value+"&limit=1&appid="+apiKey)
     .then(res => res.json())
     .then(data => aResults = data)
     .then(() => convertFetch())
@@ -101,7 +101,7 @@ function convertFetch() {
   lat = aResults[0].lat
   lon = aResults[0].lon
   
-  fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&appid="+apiKey+"&units=imperial")
+  fetch("https://blooming-lowlands-18463.herokuapp.com/https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&appid="+apiKey+"&units=imperial")
     .then(function (response) {
         if (!response.ok) {
           throw response.json();
