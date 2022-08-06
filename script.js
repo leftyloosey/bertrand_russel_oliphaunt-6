@@ -6,7 +6,7 @@ var aResults
 var bResults
 
 var now = moment()
-var currentDate = now.format("M"+"/"+"D")
+var currentDate = now.format("M"+"/"+"D"+"/"+"Y")
 var displayNow = document.querySelector("#displayNow")
 
 var uvbg = document.querySelector("#uvbg")
@@ -83,14 +83,31 @@ var humid5 = document.querySelector("#humid5")
 var fInput = document.querySelector("#fInput")
 var selectButton = document.querySelector("#selectButton")
 
+let possibles = []
+
 // this function populates the searched city history list
-function selectClick() {
-    if (cityIndex < 12) {
-    cityArray[cityIndex].textContent = fInput.value
-    cityIndex++
-    }
-    else if (cityIndex >= 12) {cityIndex = 0}
+function init() {
+  for (let i=0;i < cityArray.length;i++) {
+    cityArray[i].textContent = possibles[i]
+
+    let x = localStorage.getItem(`city${[i]}`)
+    if (x !== null && x !== "") {possibles.push(x)}
     
+    cityArray[i].textContent = possibles[i]
+    
+  }
+}
+
+function selectClick() {
+    if (cityIndex < 12 && !possibles.includes(fInput.value)) {
+      possibles.push(fInput.value)
+      cityArray[cityIndex].textContent = fInput.value
+      localStorage.setItem(`city${cityIndex}`, fInput.value)
+      cityIndex++
+        }
+    
+      else if (cityIndex >= 12) {cityIndex = 0}
+  
     fetchClick()
 }
 
@@ -125,7 +142,7 @@ function convertFetch() {
 
 // current weather display
 function displayData() {
-      bCity.innerHTML = aResults[0].name + " right now is " + "<img src=http://openweathermap.org/img/wn/"+bResults.current.weather[0].icon+"@2x.png>"
+      bCity.innerHTML = aResults[0].name + "  " + currentDate + " <img src=http://openweathermap.org/img/wn/"+bResults.current.weather[0].icon+"@2x.png>"
       bTemp.textContent = "Temp: " + bResults.current.temp
       bWind.textContent = "Wind: " + bResults.current.wind_speed
       bHumid.textContent = "Humidity: " + bResults.current.humidity
@@ -198,3 +215,7 @@ city9.addEventListener('click', difCity.bind(city9))
 city10.addEventListener('click', difCity.bind(city10))
 city11.addEventListener('click', difCity.bind(city11))
 city12.addEventListener('click', difCity.bind(city12))
+
+init()
+
+
