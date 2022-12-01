@@ -1,4 +1,4 @@
-## Bienvenidos
+## Weather Dashboard App
 
 It's an application that will tell you about the weather. Type in a city, click
 select, and immediately (well, sometimes there is a bit of a lag. just wait)
@@ -11,6 +11,6 @@ Weather information supplied by the fine people at the openweather API. Other
 than that it is a darling tiny feat of javascript and crude DOM querying and
 CSS and Fetch API.
 
-[index](https://leftyloosey.github.io/bertrand_russel_oliphaunt-6/)
+[try it out!](https://leftyloosey.github.io/bertrand_russel_oliphaunt-6/)
 
 ![screen](screen.png)
