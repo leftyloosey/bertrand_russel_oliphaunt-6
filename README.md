@@ -7,8 +7,7 @@ Cute little icons provide a visualization. Clicking on a recently searched
 city will re-display an updated screen. On mobile devices the display changes
 from a dashboard layout to a long scrolling column.
 
-Weather information supplied by the fine people at the openweather API. Other
-than that it is a darling tiny feat of javascript and crude DOM querying and
+Weather information supplied by the fine people at the openweather API. It is a darling tiny feat of simple javascript and DOM querying and
 CSS and Fetch API.
 
 [try it out!](https://leftyloosey.github.io/bertrand_russel_oliphaunt-6/)
