@@ -114,7 +114,7 @@ function selectClick() {
 // this fetches the coordinates of a searched city
 function fetchClick() {
   fetch(
-    'https://blooming-lowlands-18463.herokuapp.com/http://api.openweathermap.org/geo/1.0/direct?q=' +
+    'http://api.openweathermap.org/geo/1.0/direct?q=' +
       fInput.value +
       '&limit=1&appid=' +
       apiKey
