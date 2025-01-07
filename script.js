@@ -1,5 +1,5 @@
 // globals
-var apiKey = '45d364bd8ecf1dc95d2755ffd579b1a7'
+var apiKey = '8f14f498b80df53efe91f44dcb494851'
 var lon
 var lat
 var aResults
