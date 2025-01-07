@@ -114,7 +114,7 @@ function selectClick() {
 // this fetches the coordinates of a searched city
 function fetchClick() {
   fetch(
-    'http://api.openweathermap.org/geo/1.0/direct?q=' +
+    'https://blooming-lowlands-18463.herokuapp.com/http://api.openweathermap.org/geo/1.0/direct?q=' +
       fInput.value +
       '&limit=1&appid=' +
       apiKey
@@ -131,7 +131,7 @@ function convertFetch() {
   lon = aResults[0].lon
 
   fetch(
-    'https://blooming-lowlands-18463.herokuapp.com/https://api.openweathermap.org/data/2.5/onecall?lat=' +
+    'https://blooming-lowlands-18463.herokuapp.com/https://api.openweathermap.org/data/3.0/onecall?lat=' +
       lat +
       '&lon=' +
       lon +
