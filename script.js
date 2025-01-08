@@ -12,6 +12,7 @@ var displayNow = document.querySelector('#displayNow')
 var uvbg = document.querySelector('#uvbg')
 
 var cityIndex = 0
+// var possiblesIndex = -1
 
 // searched city history list
 var city1 = document.querySelector('#city1')
@@ -87,10 +88,8 @@ let possibles = []
 // this function populates the searched city history list
 function init() {
   for (let i = 0; i < cityArray.length; i++) {
-    cityArray[i].textContent = possibles[i]
-
     let x = localStorage.getItem(`city${[i]}`)
-    if (x !== null && x !== '') {
+    if (x) {
       possibles.push(x)
     }
 
@@ -99,13 +98,16 @@ function init() {
 }
 
 function selectClick() {
-  if (cityIndex < 12 && !possibles.includes(fInput.value)) {
+  if (possibles.length < 12 && !possibles.includes(fInput.value)) {
+    cityArray[possibles.length].textContent = fInput.value
+
+    localStorage.setItem(`city${possibles.length}`, fInput.value)
     possibles.push(fInput.value)
-    cityArray[cityIndex].textContent = fInput.value
-    localStorage.setItem(`city${cityIndex}`, fInput.value)
-    cityIndex++
-  } else if (cityIndex >= 12) {
-    cityIndex = 0
+  } else if (possibles.length >= 12) {
+    possibles.unshift(fInput.value)
+    cityArray[0].textContent = fInput.value
+
+    possibles.pop()
   }
 
   fetchClick()
@@ -238,9 +240,12 @@ function displayPanelData() {
 
 // this is the clickability of the searched city history
 function difCity(a) {
-  fInput.value = a.path[0].innerText
-  displayPanelData()
+  console.log(a.target.innerText)
+  // fInput.value = a.path[0].innerText
+  fInput.value = a.target.innerText
   fetchClick()
+
+  displayPanelData()
 }
 
 // event listeners and current date
