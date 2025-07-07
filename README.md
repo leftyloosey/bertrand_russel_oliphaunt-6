@@ -1,15 +1,11 @@
+![screen](./weather_home.jpg)
+
 ## Weather Dashboard App
 
-It's an application that will tell you about the weather. Type in a city, click
-select, and immediately (well, sometimes there is a bit of a lag. just wait)
+CSS, Fetch.
+
+It will tell you about the weather, that's for sure. Type in a city, click
+select, and immediately (well, sometimes there is a bit of a lag - just wait)
 is displayed the current conditions for that city, and also a five-day forecast.
-Cute little icons provide a visualization. Clicking on a recently searched
-city will re-display an updated screen. On mobile devices the display changes
-from a dashboard layout to a long scrolling column.
 
-Weather information supplied by the fine people at the openweather API. It is a darling tiny feat of simple javascript and DOM querying and
-CSS and Fetch API.
-
-[try it out!](https://leftyloosey.github.io/bertrand_russel_oliphaunt-6/)
-
-![screen](screen.png)
+Visit [here](https://leftyloosey.github.io/bertrand_russel_oliphaunt-6/)
